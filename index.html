@@ -6,6 +6,9 @@
   <meta charset="utf-8" />
   <meta name="description" content="Hasitha Wijesinghe - Full-Stack Developer Portfolio" />
   <title>Hasitha Wijesinghe - Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,6 +16,8 @@
   <section class="home" id="home">
 
     <header class="home-header">
+      <p class="hasitha-DEV"><span class="logo-first-part">Hasitha.</span> <span class="logo-after-part">DEV</span>
+      </p>
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="#home" class="navbar-text text-home">Home</a></li>
@@ -23,8 +28,7 @@
           <li><a href="#contact" class="navbar-text text-contact">Contact</a></li>
         </ul>
       </nav>
-      <p class="hasitha-DEV"><span class="logo-first-part">Hasitha.</span> <span class="logo-after-part">DEV</span>
-      </p>
+
     </header>
     <div class="home-left-side">
       <div class="home-text">
@@ -52,17 +56,17 @@
         <a href="#" class="social-media-link" aria-label="Facebook Profile">
           <img src="assets/facebook-brands-solid.svg" alt="Facebook icon" class="social-media-icon" />
         </a>
-        <a href="" class="social-media-link" aria-label="telegram Profile">
-          <img src="assets/telegram-brands-solid.svg" alt="Instagram icon" class="social-media-icon" />
+        <a href="#" class="social-media-link" aria-label="Telegram profile">
+          <img src="assets/telegram-brands-solid.svg" alt="Telegram icon" class="social-media-icon" />
         </a>
-        <a href="" class="social-media-link" aria-label="WhatsApp Profile">
-          <img src="assets/whatsapp-brands-solid.svg" alt="YouTube icon" class="social-media-icon" />
+        <a href="#" class="social-media-link" aria-label="WhatsApp profile">
+          <img src="assets/whatsapp-brands-solid.svg" alt="WhatsApp icon" class="social-media-icon" />
         </a>
       </div>
     </div>
     <div class="home-right-side">
       <div class="home-rectangle" aria-hidden="true"></div>
-      <img class="profil-pic" src="assets/profil_pic.png" alt="Hasitha Wijesinghe profile picture" />
+      <img class="profil-pic" src="assets/profil_pic.png" alt="Hasitha Wijesinghe profile picture" fetchpriority="high" />
     </div>
   </section>
   <section class="about" id="about">
@@ -76,7 +80,14 @@
     </div>
     <div class="aboutme-main-content">
       <div class="left-side">
-        <img class="aboutme-profile-image" src="assets/profil pic-modified.png" alt="About me illustration" />
+        <div class="about-ring-wrap" aria-hidden="true">
+          <svg class="about-ring-svg" width="360" height="360" viewBox="0 0 250 250">
+            <circle class="about-ring-track1" cx="125" cy="125" r="62"></circle>
+            <circle class="about-ring-track2" cx="125" cy="125" r="40"></circle>
+            <circle class="about-ring-dot" cx="232" cy="125" r="9"></circle>
+          </svg>
+          <img class="aboutme-profile-image" src="assets/profil pic-modified.png" alt="About me illustration" />
+        </div>
       </div>
       <div class="right-side">
         <h2 class="about-header-2">I'm a Passionate Full Stack Developer</h2>
@@ -89,33 +100,69 @@
           <span class="about-pragraph-2">Full Stack Development, AI Engineering, Cyber Security, and QA</span>
           <span class="about-paragraph-1">.</span>
         </p>
-        <div class="about-contact-info">
-          <div class="about-contact-info info-name">
-            <img src="" alt="" class="about-contact-info">
-            <dt class="about-contact-info-header">Name</dt>
-            <dd class="about-contact-info-content">Hasitha Lakshan Wijesinghe</dd>
+        <dl class="about-contact-info" aria-label="Personal details">
+          <div class="about-contact-item info-name">
+            <span class="about-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21a8 8 0 0 0-16 0"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <div class="about-contact-item-content">
+              <dt class="about-contact-info-header">Name</dt>
+              <dd class="about-contact-info-content">Hasitha Lakshan Wijesinghe</dd>
+            </div>
           </div>
-          <div class="about-contact-info info-email">
-            <img src="" alt="" class="about-contact-info">
-            <dt class="about-contact-info-header">Email</dt>
-            <dd class="about-contact-info-content">hasithawijesinghe2020@gmail.com</dd>
+
+          <div class="about-contact-item info-city">
+            <span class="about-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
+            <div class="about-contact-item-content">
+              <dt class="about-contact-info-header">City</dt>
+              <dd class="about-contact-info-content">Galle</dd>
+            </div>
           </div>
-          <div class="about-contact-info info-phone">
-            <img src="" alt="" class="about-contact-info">
-            <dt class="about-contact-info-header">Phone</dt>
-            <dd class="about-contact-info-content">+94758412376</dd>
+
+          <div class="about-contact-item info-phone">
+            <span class="about-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.84 19.84 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.84 19.84 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.1 9.91a16 16 0 0 0 6 6l1.45-1.19a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <div class="about-contact-item-content">
+              <dt class="about-contact-info-header">Phone</dt>
+              <dd class="about-contact-info-content">+94758412376</dd>
+            </div>
           </div>
-          <div class="about-contact-info info-country">
-            <img src="" alt="" class="about-contact-info">
-            <dt class="about-contact-info-header">Country</dt>
-            <dd class="about-contact-info-content">Sri Lanka</dd>
+          <div class="about-contact-item info-country">
+            <span class="about-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 4v16"></path>
+                <path d="M5 4h10l-1.5 3L15 10H5"></path>
+              </svg>
+            </span>
+            <div class="about-contact-item-content">
+              <dt class="about-contact-info-header">Country</dt>
+              <dd class="about-contact-info-content">Sri Lanka</dd>
+            </div>
           </div>
-          <div class="about-contact-info info-city">
-            <img src="" alt="" class="about-contact-info">
-            <dt class="about-contact-info-header">City</dt>
-            <dd class="about-contact-info-content">Galle</dd>
+          <div class="about-contact-item info-email">
+            <span class="about-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <polyline points="3 7 12 13 21 7"></polyline>
+              </svg>
+            </span>
+            <div class="about-contact-item-content">
+              <dt class="about-contact-info-header">Email</dt>
+              <dd class="about-contact-info-content">hasithawijesinghe2020@gmail.com</dd>
+            </div>
           </div>
-        </div>
+        </dl>
         <a href="#" class="buttons-button-cv" aria-label="Download CV">
           <span class="button-cv-rectangle" aria-hidden="true"></span>
           <span class="button-btn-text">Download CV</span>
@@ -124,15 +171,27 @@
     </div>
     <div class="about-skills">
       <h3 class="about-skills-text">SKILLS</h3>
-      <div class="skills-list">
-        <img src="assets/java-brands-solid.svg" alt="java icon" class="skills-icon" />
-        <img src="assets/python.svg" alt="python icon" class="skills-icon" />
-        <img src="assets/html.svg" alt="html icon" class="skills-icon" />
-        <img src="assets/css.svg" alt="css icon" class="skills-icon" />
-        <img src="assets/java-script.svg" alt="javascript icon" class="skills-icon" />
-        <img src="assets/docker-brands-solid.svg" alt="docker icon" class="skills-icon" />
-        <img src="assets/postgresql-brands-solid.svg" alt="postgresql icon" class="skills-icon" />
-        <img src="assets/svgviewer-output.svg" alt="mysql icon" class="skills-icon" />
+
+      <div class="skills-marquee" aria-label="Skill set">
+        <div class="skills-track">
+          <img src="assets/java-brands-solid.svg" alt="java icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/python.svg" alt="python icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/html.svg" alt="html icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/css.svg" alt="css icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/java-script.svg" alt="javascript icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/docker-brands-solid.svg" alt="docker icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/postgresql-brands-solid.svg" alt="postgresql icon" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/svgviewer-output.svg" alt="mysql icon" class="skills-icon" loading="lazy" decoding="async" />
+
+          <img src="assets/java-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/python.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/html.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/css.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/java-script.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/docker-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/postgresql-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+          <img src="assets/svgviewer-output.svg" alt="" aria-hidden="true" class="skills-icon" loading="lazy" decoding="async" />
+        </div>
       </div>
     </div>
   </section>
@@ -156,7 +215,7 @@
             Focused on core principles of software engineering, including full-stack development and system design,
             gaining hands-on experience in building robust applications.
           </p>
-          <img class="element" src="assets/logoijse2.png" alt="Institute of Software Engineering logo" />
+          <img class="element" src="assets/logoijse2.png" alt="Institute of Software Engineering logo" loading="lazy" decoding="async" />
         </div>
 
         <div class="education-box education-box-2">
@@ -164,7 +223,7 @@
           <h4 class="text-wrapper-31">G.C.E. Advanced Level (2023)</h4>
           <p class="text-wrapper-32">St. Aloysius College</p>
           <p class="physics-c-chemistry">Physics: C<br />Chemistry: C<br />Combined Mathematics: C</p>
-          <img class="st-aloysius-college" src="assets/St_Aloysius'_College_Crest.png"
+          <img class="st-aloysius-college" src="assets/St_Aloysius'_College_Crest.png" loading="lazy" decoding="async"
             alt="St. Aloysius College crest" />
         </div>
         <div class="education-box education-box-3">
@@ -175,7 +234,7 @@
             2019 G.C.E. Ordinary Level Nagoda Royal College, Galle Completed with 9 subjects.<br />7 A Passes
             (Distinctions)<br />1 B Pass (Very Good Pass)<br />1 C Pass (Credit Pass)
           </p>
-          <img class="nagoda-royal-college" src="assets/Royal_College_Nagoda_crest.png" alt="Nagoda Royal College" />
+          <img class="nagoda-royal-college" src="assets/Royal_College_Nagoda_crest.png" alt="Nagoda Royal College" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -192,7 +251,6 @@
             system optimizations, and provided direct technical support to ensure efficient problem resolution and
             customer satisfaction.
           </p>
-          <img class="tech-solutions" src="img/tech-solutions-logo-1.png" alt="Tech Solutions Inc. logo" />
           <div class="group-28" aria-label="eBase Computers logo">
             <span class="text-wrapper-37">Base</span>
             <span class="text-wrapper-38">e</span>
@@ -233,19 +291,19 @@
     <div class="project-slider">
 
       <div class="project-card project-card-1">
-        <img class="img-1" src="assets/ETec Logo.png" alt="ETec Management System screenshot" />
+        <img class="img-1" src="assets/ETec Logo.png" alt="ETec Management System screenshot" loading="lazy" decoding="async" />
         <h4 class="project-name">ETec Management System</h4>
         <p class="project-desc">Standalone Desktop Application</p>
       </div>
 
       <div class="project-card project-card-2">
-        <img class="img-2" src="assets/connect 4 game.png" alt="Connect Four Game screenshot" />
+        <img class="img-2" src="assets/connect 4 game.png" alt="Connect Four Game screenshot" loading="lazy" decoding="async" />
         <h4 class="project-name">Connect Four Game</h4>
         <p class="project-desc">Logic-Based Game Implementation</p>
       </div>
 
       <div class="project-card project-card-3">
-        <img class="terminal" src="assets/terminal.png" alt="Pigeon Service Management System terminal interface" />
+        <img class="terminal" src="assets/terminal.png" alt="Pigeon Service Management System terminal interface" loading="lazy" decoding="async" />
         <h4 class="project-name">Pigeon Service Management System</h4>
         <p class="project-desc">Terminal-Based&nbsp;&nbsp;System</p>
       </div>
@@ -315,19 +373,19 @@
     </div>
     <div class="gallery-images-grid">
       <div class="gallery-image-card g-img-card-1">
-        <img class="element-fabfa-a" src="assets/gallery-img-01.jpg" alt="Gallery image 1" />
+        <img class="element-fabfa-a" src="assets/gallery-img-01.jpg" alt="Gallery image 1" loading="lazy" decoding="async" />
       </div>
       <div class="gallery-image-card g-img-card-2">
-        <img class="DSC" src="assets/gallery-img-02.jpeg" alt="Gallery image 2" />
+        <img class="DSC" src="assets/gallery-img-02.jpeg" alt="Gallery image 2" loading="lazy" decoding="async" />
       </div>
       <div class="gallery-image-card g-img-card-3">
-        <img class="dane-gedr" src="assets/gallery-img-03.jpg" alt="Gallery image 3" />
+        <img class="dane-gedr" src="assets/gallery-img-03.jpg" alt="Gallery image 3" loading="lazy" decoding="async" />
       </div>
       <div class="gallery-image-card g-img-card-4">
-        <img class="DSC-2" src="assets/gallery-img-04.jpg" alt="Gallery image 4" />
+        <img class="DSC-2" src="assets/gallery-img-04.jpg" alt="Gallery image 4" loading="lazy" decoding="async" />
       </div>
       <div class="gallery-image-card g-img-card-5">
-        <img class="dansala" src="assets/gallery-img-05.jpg" alt="Gallery image 5" />
+        <img class="dansala" src="assets/gallery-img-05.jpg" alt="Gallery image 5" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -372,13 +430,13 @@
     <div class="right-side">
       <div class="contact-box-01" aria-hidden="true">
         <div class="headphone-img-wrapper">
-          <img class="img-headphone" src="img/headphones.svg" alt="" />
+          <span class="contact-icon">MSG</span>
         </div>
         <p class="headphones-wrapper-text">Write me a Message</p>
       </div>
       <div class="contact-box-02">
         <div class="phone-call-img-wrapper" aria-hidden="true">
-          <img class="img-phonecall" src="img/phone-call.svg" alt="" />
+          <span class="contact-icon">CALL</span>
         </div>
         <div class="phone-call-content-wrapper">
           <p class="contact-box-text box-02-text">Have Question?</p>
@@ -387,7 +445,7 @@
       </div>
       <div class="contact-box-03">
         <div class="email-img-wrapper" aria-hidden="true">
-          <img class="img-email" src="img/mark-email-unread.svg" alt="" />
+          <span class="contact-icon">MAIL</span>
         </div>
         <div class="email-content-wrapper">
           <p class="contact-box-text box-03-text">Write Email</p>
@@ -396,7 +454,7 @@
       </div>
       <div class="contact-box-03">
         <div class="location-img-wrapper" aria-hidden="true">
-          <img class="img-location" src="img/location-on.svg" alt="" />
+          <span class="contact-icon">MAP</span>
         </div>
         <div class="location-content-wrapper">
           <p class="contact-box-text box-04-text">Visit Now</p>
@@ -428,22 +486,42 @@
           <img src="assets/facebook-brands-solid.svg" alt="facebook icon" class="social-media-icon" />
         </a>
         <a href="https://github.com/H-Wijesinghe" class="social-media-link" aria-label="GitHub Profile">
-        <img src="assets/github-brands-solid.svg" alt="github icon" class="social-media-icon" />
+          <img src="assets/github-brands-solid.svg" alt="github icon" class="social-media-icon" />
         </a>
         <a href="#" class="social-media-link" aria-label="LinkedIn Profile">
-        <img src="assets/square-linkedin-brands-solid.svg" alt="linkedin icon" class="social-media-icon" />
+          <img src="assets/square-linkedin-brands-solid.svg" alt="linkedin icon" class="social-media-icon" />
         </a>
         <a href="#" class="social-media-link" aria-label="Telegram Profile">
-        <img src="assets/telegram-brands-solid.svg" alt="telegram icon" class="social-media-icon" />
+          <img src="assets/telegram-brands-solid.svg" alt="telegram icon" class="social-media-icon" />
         </a>
         <a href="#" class="social-media-link" aria-label="WhatsApp Profile">
-        <img src="assets/whatsapp-brands-solid.svg" alt="whatsapp icon" class="social-media-icon" />
+          <img src="assets/whatsapp-brands-solid.svg" alt="whatsapp icon" class="social-media-icon" />
         </a>
       </div>
       <hr>
       <p class="text-wrapper-63">© 2026 Hasitha Wijesinghe. All Rights Reserved.</p>
     </footer>
   </section>
+
+  <script>
+    (function () {
+      var ring = document.querySelector('.about-ring-wrap');
+      if (!ring || typeof IntersectionObserver === 'undefined') {
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            ring.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(ring);
+    })();
+  </script>
 </body>
 
 </html>
