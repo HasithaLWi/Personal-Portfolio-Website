@@ -400,9 +400,11 @@
       </div>
     </div>
 
+    <div class="contact-main-grid">
+
 
     <div class="left-side">
-      <div class="content-header">
+      <div class="content-title">
         <h2 class="header-label">Get in touch now</h2>
         <p class="header-description">
           Whether you have a project in mind, a question to ask, or an opportunity to discuss, feel free to get in
@@ -464,7 +466,9 @@
       </div>
     </div>
 
-    <footer class="group-61">
+    </div>
+  </section>
+      <footer class="footer">
       <div class="left">
         <p class="hasitha-DEV"><span class="logo-first-part">Hasitha.</span> <span class="logo-after-part">DEV</span>
         </p>
@@ -502,27 +506,6 @@
       <hr>
       <p class="text-wrapper-63">© 2026 Hasitha Wijesinghe. All Rights Reserved.</p>
     </footer>
-  </section>
-
-  <script>
-    (function () {
-      var ring = document.querySelector('.about-ring-wrap');
-      if (!ring || typeof IntersectionObserver === 'undefined') {
-        return;
-      }
-
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            ring.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.3 });
-
-      observer.observe(ring);
-    })();
-  </script>
 </body>
 
 </html>
