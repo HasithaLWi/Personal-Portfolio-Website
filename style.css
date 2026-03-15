@@ -54,6 +54,9 @@ section {
 .my-resume-header,
 .work-header,
 .gallery-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -63,7 +66,7 @@ section {
     color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-transform: uppercase;
 }
 
@@ -74,16 +77,23 @@ section {
     gap: 10px;
 }
 
-.line-left,
+.line-left {
+    height: 2px;
+    width: 60px;
+    background-color: var(--primary);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
 .line-right {
     height: 2px;
     width: 60px;
     background-color: var(--primary);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 .ellipse {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: var(--primary);
     border-radius: 50%;
 }
@@ -199,9 +209,10 @@ section {
 
 .home-left-side,
 .home-right-side {
+
     margin-top: 60px;
     flex: 1;
-    min-width: 400px;
+    /* min-width: 400px; */
 }
 
 .home-left-side {
@@ -258,14 +269,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 550px;
 }
 
 .home-rectangle {
     position: absolute;
     width: 150%;
-    height: 500px;
-    border: 15px solid var(--primary);
+    height: 550px;
+    border: 20px solid var(--primary);
     top: 50%;
     left: 0%;
     transform: translate(0%, -50%);
@@ -276,7 +287,7 @@ section {
     height: 130%;
     width: auto;
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     left: 0;
     transform: translate(0, 0%);
     z-index: 2;
@@ -676,7 +687,7 @@ section {
 .resume-box img {
     grid-column: 3;
     grid-row: 1 / span 3;
-    width: 60px;
+    width: 100px;
     object-fit: contain;
 }
 
@@ -939,10 +950,10 @@ section {
     transition: 0.3s;
 }
 
-.user-details:focus + .text-user-details,
-.user-details:valid + .text-user-details,
-.user-massage:focus + .text-user-details,
-.user-massage:valid + .text-user-details {
+.user-details:focus+.text-user-details,
+.user-details:valid+.text-user-details,
+.user-massage:focus+.text-user-details,
+.user-massage:valid+.text-user-details {
     top: -10px;
     left: 12px;
     font-size: 12px;
@@ -1086,34 +1097,307 @@ section {
    9. RESPONSIVE DESIGN
    ========================================================================== */
 
+@media (max-width: 1440px) {
+    .home-text-hello {
+        font-size: 90px;
 
-@media (max-width: 1024px) {
-
-    /* Home */
-    .home-header {
-        flex-direction: column-reverse;
-        gap: 20px;
     }
 
-    .home {
-        flex-direction: column;
-        text-align: center;
+    .home-text-name {
+        font-size: 50px;
+
     }
 
-    .home-left-side {
-        align-items: center;
-        margin-top: 20px;
-        padding-right: 0;
+    .home-text-job {
+        font-size: 35px;
+
     }
 
     .home-right-side {
-        margin-top: 50px;
+        height: 500px;
+    }
+
+    .home-rectangle {
+        height: 500px;
+        border: 18px solid var(--primary);
+    }
+
+    .profil-pic {
+        bottom: 18px;
+    }
+
+    /* about */
+
+    .aboutme-main-content .right-side {
+        flex: 1.2;
+    }
+
+    .about-header-2 {
+        font-size: 28px;
+    }
+
+    .about-paragraph {
+        font-size: 14px;
+    }
+
+
+    .about-contact-info-header {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .about-contact-info-content {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1200px) {
+    section {
+        padding: 0 8%;
+
+    }
+
+    .home-text-hello {
+        font-size: 80px;
+
+    }
+
+    .home-text-name {
+        font-size: 40px;
+
+    }
+
+    .home-text-job {
+        font-size: 30px;
+
+    }
+
+    .home-right-side {
+        height: 455px;
+    }
+
+    .home-rectangle {
+        height: 455px;
+        border: 16px solid var(--primary);
+    }
+
+    .profil-pic {
+        height: 115%;
+        bottom: 16px;
+    }
+
+    /* about */
+    .about-ring-wrap {
+
+        /* Prevents the box from squishing on small screens */
+        width: 445px;
+        /* Sized to fit the SVG and provide some padding */
+        height: 445px;
+
+    }
+
+    .aboutme-main-content .right-side {
+        flex: 1.2;
+    }
+
+    .about-header-2 {
+        font-size: 24px;
+    }
+
+    .about-paragraph {
+        font-size: 13px;
+    }
+
+
+    .about-contact-info-header {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .about-contact-info-content {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    /* Buttons */
+    .buttons-button-cv,
+    .btn-send-message,
+    .buttons-button-contact {
+        padding: 10px 30px;
+        font-size: 13px;
+
+    }
+
+
+
+    /* home */
+    section {
+        padding: 0 6%;
+
+    }
+
+
+    /* Home */
+    .home-header {
+        gap: 20px;
+    }
+
+    .home-text-hello {
+        margin-bottom: 8px;
+    }
+
+    .home-text-name {
+        margin-bottom: 5px;
+    }
+
+    .home-text-job {
+        margin-bottom: 35px;
+    }
+
+    .home-right-side {
+
+        margin-top: 35px;
+
+    }
+
+    .home-left-side {
+
+        margin-top: 120px;
+
+    }
+
+    .home-buttons {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .social-media {
+        margin-top: 10px;
+        gap: 30px;
+    }
+
+    .home-left-side .social-media-icon {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+
+
+
+
+    .home-right-side {
+
         height: 400px;
     }
 
     .home-rectangle {
-        width: 300px;
-        height: 250px;
+        height: 400px;
+
+    }
+
+    /* About */
+    .aboutme-main-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutme-main-content .right-side>.about-contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .about-skills {
+        align-items: center;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 60px 8% 40px 8%;
+    }
+
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-main-grid .right-side {
+        margin-top: 30px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer .left,
+    .footer .middle,
+    .footer .right {
+        justify-self: center;
+    }
+
+    .footer-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 920px) {
+
+    /* Buttons */
+    .buttons-button-cv,
+    .btn-send-message,
+    .buttons-button-contact {
+        padding: 8px 28px;
+        font-size: 12px;
+
+    }
+
+    .home-left-side {
+
+        margin-top: 100px;
+
+    }
+
+    .home-buttons {
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    .social-media {
+        margin-top: 8px;
+        gap: 25px;
+    }
+
+    .home-left-side .social-media-icon {
+
+        width: 38px;
+        height: 38px;
+
+    }
+
+
+
+
+
+
+    .home-right-side {
+
+        height: 350px;
+    }
+
+    .home-rectangle {
+        height: 350px;
+
     }
 
     /* About */
