@@ -172,7 +172,6 @@ section {
 }
 
 body:has(#burger:checked) .side-menubar {
-    /* Bring it back to its natural anchored position at right: 0 */
     transform: translateX(0);
     opacity: 1;
 }
@@ -485,23 +484,27 @@ body:has(#burger:checked) .side-menubar {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* transition */
+    opacity: 0;
+    transform: translateX(-10%);
 }
 
 
-/* Container to stack the SVG and Image */
+
 .about-ring-wrap {
     position: relative;
     flex-shrink: 0;
-    /* Prevents the box from squishing on small screens */
+
     width: 475px;
-    /* Sized to fit the SVG and provide some padding */
+
     height: 475px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Position SVG to cover the container */
+
 .about-ring-svg {
     position: absolute;
     top: 0;
@@ -510,7 +513,7 @@ body:has(#burger:checked) .side-menubar {
     height: 100%;
 }
 
-/* Shared styles for both circular tracks */
+
 .about-ring-track1,
 .about-ring-track2 {
 
@@ -526,28 +529,31 @@ body:has(#burger:checked) .side-menubar {
 
 
 
-/* Top/Left large arc */
+
+
+
 .about-ring-track1 {
-    stroke-dasharray: 370 690.8;
-    transform: rotate(140deg);
-    animation: rotateTrack1 1.5s ease-out forwards;
-
+    stroke-dasharray: 360 690.8;
+    transform: rotate(-90deg); 
+    opacity: 0;                
 }
 
-/* Bottom small arc */
 .about-ring-track2 {
-    stroke-dasharray: 170 690.8;
-    transform: rotate(22.5deg);
-    animation: rotateTrack2 1.5s ease-out forwards;
-
+    stroke-dasharray: 200 690.8;
+    transform: rotate(-90deg); 
+    opacity: 0;                
 }
 
-/* The solid dot on the right */
 .about-ring-dot {
     fill: #ff6600;
     transform-origin: 125px 125px;
-    animation: aboutRingDotMove 1.5s ease-out forwards;
+    transform: rotate(-90deg); 
+    opacity: 0;                
 }
+
+
+
+
 
 
 .aboutme-profile-image {
@@ -564,23 +570,6 @@ body:has(#burger:checked) .side-menubar {
 }
 
 
-/* 1. Set the default state to paused so it doesn't run immediately */
-.about-ring-track1,
-.about-ring-track2,
-.about-ring-dot {
-    animation-play-state: paused;
-}
-
-/* 2. When the .about section is hovered, change the state to running */
-.about:hover .about-ring-track1,
-.about:hover .about-ring-track2,
-.about:hover .about-ring-dot {
-    animation-play-state: running;
-}
-
-
-
-/* Animates Track 1 to its final 140deg position */
 @keyframes rotateTrack1 {
     from {
         transform: rotate(-90deg);
@@ -588,12 +577,12 @@ body:has(#burger:checked) .side-menubar {
     }
 
     to {
-        transform: rotate(140deg);
+        transform: rotate(120deg);
         opacity: 1;
     }
 }
 
-/* Animates Track 2 to its final 22.5deg position */
+
 @keyframes rotateTrack2 {
     from {
         transform: rotate(-90deg);
@@ -601,12 +590,12 @@ body:has(#burger:checked) .side-menubar {
     }
 
     to {
-        transform: rotate(22.5deg);
+        transform: rotate(-8.5deg);
         opacity: 1;
     }
 }
 
-/* Smoothly fades and slides the dot into place */
+
 @keyframes aboutRingDotMove {
     from {
         transform: rotate(-90deg);
@@ -614,7 +603,7 @@ body:has(#burger:checked) .side-menubar {
     }
 
     to {
-        transform: rotate(0deg);
+        transform: rotate(-30deg);
         opacity: 1;
     }
 }
@@ -623,6 +612,10 @@ body:has(#burger:checked) .side-menubar {
 .aboutme-main-content .right-side {
     flex: 1.5;
     min-width: 350px;
+
+    /* transition */
+    opacity: 0;
+    transform: translateX(10%);
 }
 
 .about-header-2 {
@@ -697,6 +690,10 @@ body:has(#burger:checked) .side-menubar {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 10px;
+
+        /* transition */
+        opacity: 0;
+        transform: translateY(5%);
 }
 
 .about-skills-text {
@@ -706,28 +703,6 @@ body:has(#burger:checked) .side-menubar {
     color: #ccc;
 }
 
-/* .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-}
-
-.skills-icon {
-    height: 40px;
-    width: auto;
-    filter: invert(1);
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.skills-icon:hover {
-    transform: scale(1.1);
-    opacity: 1;
-} */
-/* ************************ */
-/* skill marquee inspired by https://css-tricks.com/infinite-all-css-scrolling-slideshow/ */
-/* *********************************** */
 
 .skills-marquee {
     width: 100%;
@@ -778,6 +753,38 @@ body:has(#burger:checked) .side-menubar {
     .skills-track {
         animation: none;
     }
+}
+
+/* about transition */
+.about .left-side,
+.about .right-side,
+.about-skills {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* ===========================about-section-javaScript======================== */
+
+.about.is-visible .about-ring-track1 {
+    animation: rotateTrack1 1.5s ease-out forwards;
+}
+
+.about.is-visible .about-ring-track2 {
+    animation: rotateTrack2 1.5s ease-out forwards;
+}
+
+.about.is-visible .about-ring-dot {
+    animation: aboutRingDotMove 1.5s ease-out forwards;
+}
+
+
+.about.is-visible .aboutme-main-content .right-side,
+.about.is-visible .aboutme-main-content .left-side {
+    opacity: 1;
+    transform: translateX(0);
+}
+.about.is-visible .about-skills {
+    opacity: 1;
+    transform: translate(0);
 }
 
 /* ==========================================================================
@@ -854,7 +861,6 @@ body:has(#burger:checked) .side-menubar {
 }
 
 
-/* Hide alternate text logo structure */
 
 /* ==========================================================================
    6. WORK / PROJECTS SECTION
@@ -1241,11 +1247,6 @@ body:has(#burger:checked) .side-menubar {
     color: var(--primary);
 }
 
-/* .footer-nav li:not(:last-child)::after {
-    content: "•";
-    color: #555;
-    margin-left: 15px;
-} */
 
 .footer hr {
     grid-column: 1 / span 3;
@@ -1626,9 +1627,6 @@ body:has(#burger:checked) .side-menubar {
         height: 275px;
     }
 
-    /* .contact {
-        padding: 60px 8% 40px 8%;
-    } */
 
     .contact-main-grid {
         grid-template-columns: 1fr;
