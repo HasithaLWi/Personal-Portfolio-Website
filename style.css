@@ -173,7 +173,7 @@ section {
 
 body:has(#burger:checked) .side-menubar {
     /* Bring it back to its natural anchored position at right: 0 */
-    transform: translateX(0); 
+    transform: translateX(0);
     opacity: 1;
 }
 
@@ -298,6 +298,12 @@ body:has(#burger:checked) .side-menubar {
     filter: invert(57%) sepia(61%) saturate(2224%) hue-rotate(345deg) brightness(96%) contrast(97%);
 }
 
+/* ========================================================================== */
+/* javaScript elements */
+
+
+/* ========================================================================== */
+
 /* ==========================================================================
    3. HOME SECTION
    ========================================================================== */
@@ -348,6 +354,7 @@ body:has(#burger:checked) .side-menubar {
 .home-right-side {
     flex: 1;
     /* min-width: 400px; */
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .home-left-side {
@@ -355,6 +362,10 @@ body:has(#burger:checked) .side-menubar {
     margin-top: 0;
     flex-direction: column;
     justify-content: center;
+
+
+    opacity: 0;
+    transform: translateX(-25%);
 }
 
 .home-text-hello {
@@ -406,7 +417,12 @@ body:has(#burger:checked) .side-menubar {
     justify-content: center;
     align-items: center;
     height: 550px;
+
+
+    opacity: 0;
+    transform: translateX(25%);
 }
+
 
 .home-rectangle {
     position: absolute;
@@ -428,6 +444,13 @@ body:has(#burger:checked) .side-menubar {
     transform: translate(-10px, 0%);
     z-index: 2;
     object-fit: contain;
+}
+
+/* ===========================home-section-javaScript======================== */
+.home.is-visible .home-left-side,
+.home.is-visible .home-right-side {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ==========================================================================
