@@ -52,8 +52,11 @@ section {
    2. REUSABLE COMPONENTS (Headers, Buttons, Icons)
    ========================================================================== */
 
+/* ================================= */
+/*                header             */
+/* ================================= */
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -61,9 +64,124 @@ section {
     align-items: center;
     padding: 10px 60px;
     width: 100%;
-    /* background-color: var(--bg-darker); */
     z-index: 100;
 }
+
+
+/* menubar icon */
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+    transform: scale(0.8);
+
+}
+
+.burger input {
+    display: none;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: var(--text-main);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
+
+.burger input:checked~span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+    background: var(--primary);
+}
+
+.burger input:checked~span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+    background: var(--primary);
+
+}
+
+.burger input:checked~span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+    background: var(--primary);
+
+}
+
+.side-menubar {
+    display: none;
+    position: relative;
+    height: 100vh;
+    width: 55vw;
+    background-color: color-mix(in srgb, var(--bg-darker), transparent 40%);
+    padding: 20px 30px;
+    z-index: 200;
+    right: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.side-navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+
+
+.side-navbar a {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.side-navbar hr {
+    border: none;
+    border-top: 1px solid var(--primary);
+    margin: 20px 0;
+}
+
+body:has(#burger:checked) .side-menubar {
+    /* Bring it back to its natural anchored position at right: 0 */
+    transform: translateX(0); 
+    opacity: 1;
+}
+
+
+
+/* ================================= */
+
+
 
 /* Section Headers */
 .about-header,
@@ -972,8 +1090,12 @@ section {
 .user-details:valid+.text-user-details,
 .user-massage:focus+.text-user-details,
 .user-massage:valid+.text-user-details {
-    top: -10px;
-    left: 12px;
+
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    /* top: -10px;
+    /* left: 12px; */
     font-size: 12px;
     color: var(--primary);
     background-color: var(--bg-dark);
@@ -1266,15 +1388,7 @@ section {
 
     }
 
-    .user-details:focus+.text-user-details,
-    .user-details:valid+.text-user-details,
-    .user-massage:focus+.text-user-details,
-    .user-massage:valid+.text-user-details {
-        top: -10px;
-        left: 12px;
-        font-size: 12px;
-        padding: 0 6px;
-    }
+
 
     .btn-send-message {
         margin-top: 10px;
@@ -1538,6 +1652,11 @@ section {
 
 @media (max-width: 768px) {
 
+    .side-menubar {
+        display: block;
+        position: fixed;
+        top: 61px;
+    }
 
 
     .aboutme-main-content {
@@ -1576,12 +1695,12 @@ section {
         display: none;
     }
 
-    .navbar::before {
-        content: "\2630";
-        font-size: 22px;
-        color: var(--text-main);
-        line-height: 1;
+    .burger {
+        display: block;
+        cursor: pointer;
     }
+
+
 
     .home-main-container {
         display: flex;
@@ -1756,9 +1875,14 @@ section {
         padding: 25px 20px;
     }
 
-    .header .hasitha-DEV {
-        font-size: 14px;
+    .side-menubar {
+
+        top: 51px;
     }
+
+    /* .header .hasitha-DEV {
+        font-size: 14px;
+    } */
 
     .home-right-side {
         margin-top: 0;
@@ -1862,6 +1986,13 @@ section {
 }
 
 @media (max-width: 480px) {
+
+    .side-menubar {
+
+        top: 41px;
+        width: 75vw;
+    }
+
     section {
         padding: 45px 2% 0;
     }

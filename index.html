@@ -14,64 +14,93 @@
 </head>
 
 <body>
-      <header class="header" role="navigation" aria-label="Primary navigation">
-      <p class="hasitha-DEV"><span class="logo-first-part">Hasitha.</span> <span class="logo-after-part">DEV</span>
-      </p>
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <header class="header" role="navigation" aria-label="Primary navigation">
+    <p class="hasitha-DEV"><span class="logo-first-part">Hasitha.</span> <span class="logo-after-part">DEV</span>
+    </p>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home" class="navbar-text text-home">Home</a></li>
+        <li><a href="#about" class="navbar-text text-about">About</a></li>
+        <li><a href="#resume" class="navbar-text text-resume">Resume</a></li>
+        <li><a href="#work" class="navbar-text text-work">Work</a></li>
+        <li><a href="#gallery" class="navbar-text text-gallery">Gallery</a></li>
+        <li><a href="#contact" class="navbar-text text-contact">Contact</a></li>
+      </ul>
+    </nav>
+    <label class="burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </header>
+        <div class="side-menubar">
+      <nav class="side-navbar" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="#home" class="navbar-text text-home">Home</a></li>
+          <hr>
           <li><a href="#about" class="navbar-text text-about">About</a></li>
+          <hr>
+
           <li><a href="#resume" class="navbar-text text-resume">Resume</a></li>
+          <hr>
+
           <li><a href="#work" class="navbar-text text-work">Work</a></li>
+          <hr>
+
           <li><a href="#gallery" class="navbar-text text-gallery">Gallery</a></li>
+          <hr>
+
           <li><a href="#contact" class="navbar-text text-contact">Contact</a></li>
+          <hr>
+
         </ul>
       </nav>
+    </div>
 
-    </header>
   <section class="home" id="home">
 
 
     <div class="home-main-container">
-    <div class="home-left-side">
-      <div class="home-text">
-        <h1 class="home-text-hello">Hello!</h1>
-        <p class="home-text-name">I Am Hasitha ,</p>
-        <p class="home-text-job">Full-Stack Developer</p>
+      <div class="home-left-side">
+        <div class="home-text">
+          <h1 class="home-text-hello">Hello!</h1>
+          <p class="home-text-name">I Am Hasitha ,</p>
+          <p class="home-text-job">Full-Stack Developer</p>
+        </div>
+        <div class="home-buttons">
+          <a href="#" class="buttons-button-cv" aria-label="Download CV">
+            <span class="button-cv-rectangle" aria-hidden="true"></span>
+            <span class="button-btn-text">Download CV</span>
+          </a>
+          <a href="#contact" class="buttons-button-contact" aria-label="Contact">
+            <span class="button-contact-rectangle" aria-hidden="true"></span>
+            <span class="button-btn-text">Contact</span>
+          </a>
+        </div>
+        <div class="social-media">
+          <a href="#" class="social-media-link" aria-label="LinkedIn Profile">
+            <img src="assets/square-linkedin-brands-solid.svg" alt="LinkedIn icon" class="social-media-icon" />
+          </a>
+          <a href="https://github.com/HasithaLWi" class="social-media-link" aria-label="GitHub Profile">
+            <img src="assets/github-brands-solid.svg" alt="GitHub icon" class="social-media-icon" />
+          </a>
+          <a href="#" class="social-media-link" aria-label="Facebook Profile">
+            <img src="assets/facebook-brands-solid.svg" alt="Facebook icon" class="social-media-icon" />
+          </a>
+          <a href="#" class="social-media-link" aria-label="Telegram profile">
+            <img src="assets/telegram-brands-solid.svg" alt="Telegram icon" class="social-media-icon" />
+          </a>
+          <a href="#" class="social-media-link" aria-label="WhatsApp profile">
+            <img src="assets/whatsapp-brands-solid.svg" alt="WhatsApp icon" class="social-media-icon" />
+          </a>
+        </div>
       </div>
-      <div class="home-buttons">
-        <a href="#" class="buttons-button-cv" aria-label="Download CV">
-          <span class="button-cv-rectangle" aria-hidden="true"></span>
-          <span class="button-btn-text">Download CV</span>
-        </a>
-        <a href="#contact" class="buttons-button-contact" aria-label="Contact">
-          <span class="button-contact-rectangle" aria-hidden="true"></span>
-          <span class="button-btn-text">Contact</span>
-        </a>
+      <div class="home-right-side">
+        <div class="home-rectangle" aria-hidden="true"></div>
+        <img class="profil-pic" src="assets/profil_pic.png" alt="Hasitha Wijesinghe profile picture"
+          fetchpriority="high" />
       </div>
-      <div class="social-media">
-        <a href="#" class="social-media-link" aria-label="LinkedIn Profile">
-          <img src="assets/square-linkedin-brands-solid.svg" alt="LinkedIn icon" class="social-media-icon" />
-        </a>
-        <a href="https://github.com/HasithaLWi" class="social-media-link" aria-label="GitHub Profile">
-          <img src="assets/github-brands-solid.svg" alt="GitHub icon" class="social-media-icon" />
-        </a>
-        <a href="#" class="social-media-link" aria-label="Facebook Profile">
-          <img src="assets/facebook-brands-solid.svg" alt="Facebook icon" class="social-media-icon" />
-        </a>
-        <a href="#" class="social-media-link" aria-label="Telegram profile">
-          <img src="assets/telegram-brands-solid.svg" alt="Telegram icon" class="social-media-icon" />
-        </a>
-        <a href="#" class="social-media-link" aria-label="WhatsApp profile">
-          <img src="assets/whatsapp-brands-solid.svg" alt="WhatsApp icon" class="social-media-icon" />
-        </a>
-      </div>
-    </div>
-    <div class="home-right-side">
-      <div class="home-rectangle" aria-hidden="true"></div>
-      <img class="profil-pic" src="assets/profil_pic.png" alt="Hasitha Wijesinghe profile picture"
-        fetchpriority="high" />
-    </div>
     </div>
   </section>
   <section class="about" id="about">
@@ -197,19 +226,22 @@
             decoding="async" />
           <img src="assets/svgviewer-output.svg" alt="mysql icon" class="skills-icon" loading="lazy" decoding="async" />
 
-          <img src="assets/java-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
+          <img src="assets/java-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone"
+            loading="lazy" decoding="async" />
+          <img src="assets/python.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
             decoding="async" />
-          <img src="assets/python.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy" decoding="async" />
-          <img src="assets/html.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy" decoding="async" />
-          <img src="assets/css.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy" decoding="async" />
+          <img src="assets/html.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
+            decoding="async" />
+          <img src="assets/css.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
+            decoding="async" />
           <img src="assets/java-script.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
             decoding="async" />
-          <img src="assets/docker-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
-            decoding="async" />
-          <img src="assets/postgresql-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
-            decoding="async" />
-          <img src="assets/svgviewer-output.svg" alt="" aria-hidden="true" class="skills-icon skill-clone" loading="lazy"
-            decoding="async" />
+          <img src="assets/docker-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone"
+            loading="lazy" decoding="async" />
+          <img src="assets/postgresql-brands-solid.svg" alt="" aria-hidden="true" class="skills-icon skill-clone"
+            loading="lazy" decoding="async" />
+          <img src="assets/svgviewer-output.svg" alt="" aria-hidden="true" class="skills-icon skill-clone"
+            loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -275,25 +307,25 @@
           <!-- <img class="nagoda-royal-college" src="assets/Royal_College_Nagoda_crest.png" alt="Nagoda Royal College"
             loading="lazy" decoding="async" />
         </div> -->
-      </div>
-    </div>
-
-    <div class="activities">
-      <h3 class="page-sub-title title-activities">ACTIVITIES</h3>
-      <div class="frame-3">
-        <div class="resume-box activities-box activities-box-1">
-
-          <h4 class="box-title">Extra-Curricular Activities</h4>
-          <p class="box-where-title">Nagoda Royal College, Galle</p>
-          <p class="active-participants">
-            Active participant in school activities that built character and creativity.<br />Cadet Platoon:
-            Member of the school cadet team, focusing on discipline and teamwork.<br />Sports: Played cricket at
-            the school level, fostering team spirit and active collaboration.<br />Arts: Competed in multiple art
-            competitions, developing a sharp eye for visual design and detail.
-          </p>
         </div>
       </div>
-    </div>
+
+      <div class="activities">
+        <h3 class="page-sub-title title-activities">ACTIVITIES</h3>
+        <div class="frame-3">
+          <div class="resume-box activities-box activities-box-1">
+
+            <h4 class="box-title">Extra-Curricular Activities</h4>
+            <p class="box-where-title">Nagoda Royal College, Galle</p>
+            <p class="active-participants">
+              Active participant in school activities that built character and creativity.<br />Cadet Platoon:
+              Member of the school cadet team, focusing on discipline and teamwork.<br />Sports: Played cricket at
+              the school level, fostering team spirit and active collaboration.<br />Arts: Competed in multiple art
+              competitions, developing a sharp eye for visual design and detail.
+            </p>
+          </div>
+        </div>
+      </div>
   </section>
   <section class="my-work-project" id="work">
     <div class="work-header">
