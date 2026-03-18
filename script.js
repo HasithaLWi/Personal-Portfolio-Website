@@ -1,38 +1,17 @@
-// document.addEventListener('DOMContentLoaded', () => {
-
-//   const heroSection = document.querySelector('.home');
-
-
-//   const observerOptions = {
-//     root: null, 
-//     rootMargin: '0px',
-//     threshold: 0.1 // Triggers when 10% of the element is visible
-//   };
-
-
-//   const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-
-//         heroSection.classList.add('is-visible');
-//       } else {
-
-//         heroSection.classList.remove('is-visible');
-//       }
-//     });
-//   }, observerOptions);
-
-
-//   if (heroSection) {
-//     observer.observe(heroSection);
-//   }
-// });
-
 
 document.addEventListener('DOMContentLoaded', () => {
   
 
-  const allSections = document.querySelectorAll('.animate-section');
+  const allSections = document.querySelectorAll('.visited-section');
+
+
+// for resume section
+    const resumeSection = document.querySelector('.my-resume');
+
+
+// for other sections
+
+  
   
 
   if (allSections.length === 0) return; 
@@ -45,8 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (entry.isIntersecting) {
         element.classList.add('is-visible');
+
+        if (element === resumeSection) {
+          resumeTransition();
+        }
       } else {
         element.classList.remove('is-visible');
+
+        if (element === resumeSection) {
+          resetResumeTransition();
+        }
       }
     });
   };
@@ -66,4 +53,63 @@ for (const section of allSections) {
   }
 
 });
+
+console.log('Script loaded successfully');
+console.log('All sections:', document.querySelectorAll('.visited-section'));
+
+
+function resumeTransition() {
+  const resumeSection = document.querySelector('.my-resume'); 
+  if (resumeSection) {
+    resumeSection.classList.add('is-visible');
+  }
+
+  let transitionDelay = 0;
+  
+  for (let i = 1; i <= 3; i++) {
+
+    transitionDelay += 100; 
+
+    const activitiesBox = document.querySelector(`.activities-box-${i}`);
+    if (activitiesBox) {
+      setTimeout(() => {
+        activitiesBox.classList.add('is-visible');
+      }, transitionDelay);
+    }
+
+    const experienceBox = document.querySelector(`.experience-box-${i}`);
+    if (experienceBox) {
+      setTimeout(() => {
+        experienceBox.classList.add('is-visible');
+      }, transitionDelay);
+    }
+
+    const educationBox = document.querySelector(`.education-box-${i}`);
+    if (educationBox) {
+      setTimeout(() => {
+        educationBox.classList.add('is-visible');
+      }, transitionDelay);
+    }
+  }
+}
+
+function resetResumeTransition() {
+  const resumeSection = document.querySelector('.my-resume');
+  if (resumeSection) {
+    resumeSection.classList.remove('is-visible');
+  }
+
+  // Loop through and remove the class from all boxes
+  for (let i = 1; i <= 3; i++) {
+    const activitiesBox = document.querySelector(`.activities-box-${i}`);
+    if (activitiesBox) activitiesBox.classList.remove('is-visible');
+
+    const experienceBox = document.querySelector(`.experience-box-${i}`);
+    if (experienceBox) experienceBox.classList.remove('is-visible');
+
+    const educationBox = document.querySelector(`.education-box-${i}`);
+    if (educationBox) educationBox.classList.remove('is-visible');
+  }
+}
+
 

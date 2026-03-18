@@ -364,7 +364,7 @@ body:has(#burger:checked) .side-menubar {
 
 
     opacity: 0;
-    transform: translateX(-25%);
+    transform: translateX(-10%);
 }
 
 .home-text-hello {
@@ -419,7 +419,7 @@ body:has(#burger:checked) .side-menubar {
 
 
     opacity: 0;
-    transform: translateX(25%);
+    transform: translateX(10%);
 }
 
 
@@ -534,21 +534,21 @@ body:has(#burger:checked) .side-menubar {
 
 .about-ring-track1 {
     stroke-dasharray: 360 690.8;
-    transform: rotate(-90deg); 
-    opacity: 0;                
+    transform: rotate(-90deg);
+    opacity: 0;
 }
 
 .about-ring-track2 {
     stroke-dasharray: 200 690.8;
-    transform: rotate(-90deg); 
-    opacity: 0;                
+    transform: rotate(-90deg);
+    opacity: 0;
 }
 
 .about-ring-dot {
     fill: #ff6600;
     transform-origin: 125px 125px;
-    transform: rotate(-90deg); 
-    opacity: 0;                
+    transform: rotate(-90deg);
+    opacity: 0;
 }
 
 
@@ -691,9 +691,9 @@ body:has(#burger:checked) .side-menubar {
     align-items: flex-start;
     border-radius: 10px;
 
-        /* transition */
-        opacity: 0;
-        transform: translateY(5%);
+    /* transition */
+    opacity: 0;
+    transform: translateY(5%);
 }
 
 .about-skills-text {
@@ -782,6 +782,7 @@ body:has(#burger:checked) .side-menubar {
     opacity: 1;
     transform: translateX(0);
 }
+
 .about.is-visible .about-skills {
     opacity: 1;
     transform: translate(0);
@@ -814,7 +815,13 @@ body:has(#burger:checked) .side-menubar {
     gap: 20px;
     padding: 30px 0;
     border-bottom: 1px solid var(--border);
+    transform: translateX(-10%);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
+
+
+
 
 
 /* .frame>div:last-child {
@@ -860,6 +867,13 @@ body:has(#burger:checked) .side-menubar {
     width: 140px;
 }
 
+/* ===========================my-resume-section-javaScript=================== */
+
+
+.resume-box.is-visible {
+    transform: translateX(0);
+    opacity: 1;
+}
 
 
 /* ==========================================================================
@@ -2229,10 +2243,6 @@ body:has(#burger:checked) .side-menubar {
 }
 
 @media (max-width: 430px) {
-
-    section {
-        padding: 40px 2% 0;
-    }
 
     .home-rectangle {
         left: 7%;
