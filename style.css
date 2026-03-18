@@ -344,27 +344,28 @@ body:has(#burger:checked) .side-menubar {
     justify-content: center;
     align-items: center;
     /* gap: clamp(20px, 4vw, 50px); */
-    min-height: calc(100vh - 120px);
+    min-height: 100vh;
     padding-block: clamp(36px, 7vh, 80px);
     width: 100%;
 }
 
 .home-left-side,
 .home-right-side {
-    flex: 1;
-    /* min-width: 400px; */
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    /* min-width: 400px;*/
 }
 
 .home-left-side {
     display: flex;
+    flex: 1;
     margin-top: 0;
     flex-direction: column;
     justify-content: center;
 
-
+    /* transform  */
     opacity: 0;
     transform: translateX(-10%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+
 }
 
 .home-text-hello {
@@ -413,13 +414,16 @@ body:has(#burger:checked) .side-menubar {
     top: 0;
     margin-top: 0;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     height: 550px;
 
-
+    /* transform  */
     opacity: 0;
     transform: translateX(10%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+
 }
 
 
@@ -817,7 +821,7 @@ body:has(#burger:checked) .side-menubar {
     border-bottom: 1px solid var(--border);
     transform: translateX(-10%);
     opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+
 }
 
 
@@ -867,14 +871,39 @@ body:has(#burger:checked) .side-menubar {
     width: 140px;
 }
 
+/* transition */
+
+.education-box-1 {
+    transition: transform 0.6s ease 0.1s, opacity 0.6s ease 0.1s;
+}
+
+.education-box-2 {
+    transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
+}
+
+.education-box-3 {
+    transition: transform 0.6s ease 0.3s, opacity 0.6s ease 0.3s;
+}
+
+.experience-box-1 {
+    transition: transform 0.6s ease 0.1s, opacity 0.6s ease 0.1s;
+}
+
+.activities-box-1 {
+    transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
+}
+
 /* ===========================my-resume-section-javaScript=================== */
 
 
-.resume-box.is-visible {
-    transform: translateX(0);
+.my-resume.is-visible .education-box-1,
+.my-resume.is-visible .experience-box-1,
+.my-resume.is-visible .activities-box-1,
+.my-resume.is-visible .education-box-2,
+.my-resume.is-visible .education-box-3 {
     opacity: 1;
+    transform: translateX(0);
 }
-
 
 /* ==========================================================================
    6. WORK / PROJECTS SECTION
@@ -892,7 +921,48 @@ body:has(#burger:checked) .side-menubar {
     margin-bottom: 60px;
 }
 
+.project-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
 
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: all 0.5s ease;
+}
+
+.project-card:hover .project-buttons {
+    max-height: 80px;
+    margin-bottom: 20px;
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card-button {
+    padding: 8px 20px;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card-button:hover {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    color: var(--text-main);
+}
 
 .project-sub-title {
     font-size: 20px;
@@ -917,10 +987,7 @@ body:has(#burger:checked) .side-menubar {
     /* transition */
     opacity: 0;
     transform: translateY(10%);
-    transition: transform 0.6s ease, opacity 0.6s ease;
 }
-
-
 
 .project-card img {
     width: 100%;
@@ -935,6 +1002,7 @@ body:has(#burger:checked) .side-menubar {
 .project-card:hover img {
     transform: translateY(-5px);
 }
+
 
 .project-name {
     font-size: 16px;
@@ -957,6 +1025,7 @@ body:has(#burger:checked) .side-menubar {
 
 .assignment-card {
     display: flex;
+    position: relative;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
@@ -966,15 +1035,56 @@ body:has(#burger:checked) .side-menubar {
     gap: 15px;
     transition: 0.3s;
     cursor: pointer;
+
+    /* ADD THIS: Turns the card into a measurable container */
+    container-type: inline-size;
+}
+
+.assignment-details {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-card);
+    padding: 2px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.assignment-description {
+
+    font-size: clamp(10px, 5cqi, 14px); 
+    color: var(--text-muted);
+    line-height: 1.4;
+    
+    overflow: hidden;
+}
+
+.assignment-technologies {
+
+    font-size: clamp(12px, 5cqi, 14px); 
+    color: var(--text-main);
+    line-height: 1.4;
+    margin-top: 5px;
+    
+    overflow: hidden;
 }
 
 .assignment-card:hover {
     border-color: var(--primary);
     background-color: rgba(242, 116, 5, 0.05);
 }
+.assignment-card:hover .assignment-details {
+    display: block;
+    opacity: 1;
+}
 
-.assignment-card img.pdf {
-    width: 40px;
+.assignment-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .assignment-name {
@@ -983,11 +1093,27 @@ body:has(#burger:checked) .side-menubar {
     color: #e0e0e0;
 }
 
-/* ===========================my-resume-section-javaScript=================== */
+/* transition for work section */
 
-.project-card.is-visible {
+.project-card-1 {
+    transition: transform 0.6s ease 0.1s, opacity 0.6s ease 0.1s;
+}
+
+.project-card-2 {
+    transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
+}
+
+.project-card-3 {
+    transition: transform 0.6s ease 0.3s, opacity 0.6s ease 0.3s;
+}
+
+/* ===========================my-work-section-javaScript=================== */
+
+.my-work-project.is-visible .project-card-1,
+.my-work-project.is-visible .project-card-2,
+.my-work-project.is-visible .project-card-3 {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0);
 }
 
 /* ==========================================================================
@@ -1003,9 +1129,11 @@ body:has(#burger:checked) .side-menubar {
 
 .gallery-images-grid {
     display: flex;
+    justify-content: center;
+    width: 100%;
     flex-wrap: wrap;
     gap: 15px;
-    max-width: 1100px;
+    /* max-width: 1100px; */
     margin: 0 auto;
 }
 
@@ -1013,20 +1141,35 @@ body:has(#burger:checked) .side-menubar {
     height: 280px;
     flex-grow: 1;
     overflow: hidden;
+    /* transition */
+    opacity: 0;
+    transform: translateY(10%);
 }
 
-.g-img-card-1,
+.g-img-card-1 {
+    flex-basis: 45%;
+    transition: transform 0.6s ease 0.05s, opacity 0.6s ease 0.05s;
+
+}
+
 .g-img-card-2 {
     flex-basis: 45%;
+    transition: transform 0.6s ease 0.1s, opacity 0.6s ease 0.1s;
 }
 
-.g-img-card-3,
+.g-img-card-3 {
+    flex-basis: 30%;
+    transition: transform 0.6s ease 0.15s, opacity 0.6s ease 0.15s;
+}
+
 .g-img-card-4 {
     flex-basis: 30%;
+    transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
 }
 
 .g-img-card-5 {
     flex-basis: 15%;
+    transition: transform 0.6s ease 0.25s, opacity 0.6s ease 0.25s;
 }
 
 .gallery-image-card img {
@@ -1040,6 +1183,17 @@ body:has(#burger:checked) .side-menubar {
 
 .gallery-image-card:hover img {
     transform: scale(1.05);
+}
+
+/* ===========================gallery-section-javaScript======================== */
+
+.gallery.is-visible .g-img-card-1,
+.gallery.is-visible .g-img-card-2,
+.gallery.is-visible .g-img-card-3,
+.gallery.is-visible .g-img-card-4,
+.gallery.is-visible .g-img-card-5 {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ===========================================================================
@@ -1156,8 +1310,6 @@ body:has(#burger:checked) .side-menubar {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
-    /* top: -10px;
-    /* left: 12px; */
     font-size: 12px;
     color: var(--primary);
     background-color: var(--bg-dark);
@@ -1588,10 +1740,6 @@ body:has(#burger:checked) .side-menubar {
         height: 375px;
 
     }
-
-
-
-
 }
 
 @media (max-width: 920px) {
@@ -1645,7 +1793,7 @@ body:has(#burger:checked) .side-menubar {
     .home-right-side {
         height: 300px;
         margin-top: 0;
-        transform: none;
+        /* transform: none; */
     }
 
     .home-rectangle {
@@ -1714,13 +1862,6 @@ body:has(#burger:checked) .side-menubar {
         width: 100%;
         margin: 0;
     }
-
-
-
-
-
-
-
 }
 
 
@@ -1774,14 +1915,11 @@ body:has(#burger:checked) .side-menubar {
         cursor: pointer;
     }
 
-
-
     .home-main-container {
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
         align-items: center;
-        height: auto;
-        min-height: auto;
         /* padding-block: 24px; */
         width: 100%;
     }
@@ -1797,7 +1935,7 @@ body:has(#burger:checked) .side-menubar {
         width: 100%;
         /* max-width: 360px; */
         height: 320px;
-        transform: none;
+        /* transform: none; */
         z-index: 1;
     }
 
@@ -1822,8 +1960,8 @@ body:has(#burger:checked) .side-menubar {
     }
 
     .home-left-side {
-        transform: none;
-        margin-top: 0;
+        /* transform: none; */
+        margin-top: 16px;
         align-items: center;
         width: 100%;
         text-align: center;
@@ -1928,9 +2066,6 @@ body:has(#burger:checked) .side-menubar {
     .footer {
         padding: 30px 20px 18px 20px;
     }
-
-
-
 }
 
 @media (max-width: 600px) {
@@ -1954,10 +2089,6 @@ body:has(#burger:checked) .side-menubar {
         top: 51px;
     }
 
-    /* .header .hasitha-DEV {
-        font-size: 14px;
-    } */
-
     .home-right-side {
         margin-top: 0;
         top: 0;
@@ -1974,8 +2105,8 @@ body:has(#burger:checked) .side-menubar {
     }
 
     .home-left-side {
-        transform: none;
-        margin-top: 0;
+        /* transform: none; */
+        margin-top: 16px;
         align-items: center;
         width: 100%;
         text-align: center;
@@ -2058,9 +2189,6 @@ body:has(#burger:checked) .side-menubar {
     .project-card {
         transform: translateX(-10%);
     }
-
-
-
 }
 
 @media (max-width: 480px) {
@@ -2237,6 +2365,17 @@ body:has(#burger:checked) .side-menubar {
         width: 78px;
     }
 
+    .project-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-card:hover .project-buttons {
+        max-height: 100px;
+        margin-bottom: 10px;
+
+    }
+
     .assignment-grid {
         grid-template-columns: 1fr;
     }
@@ -2273,8 +2412,6 @@ body:has(#burger:checked) .side-menubar {
         padding: 30px 15px 18px 15px;
         gap: 25px;
     }
-
-
 
     .footer-nav ul {
         display: flex;
