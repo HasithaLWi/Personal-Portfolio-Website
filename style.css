@@ -263,7 +263,8 @@ body:has(#burger:checked) .side-menubar {
 .buttons-button-cv:hover,
 .btn-send-message:hover {
     background-color: transparent;
-    color: var(--primary);
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
 }
 
 .buttons-button-contact {
@@ -347,11 +348,6 @@ body:has(#burger:checked) .side-menubar {
     min-height: 100vh;
     padding-block: clamp(36px, 7vh, 80px);
     width: 100%;
-}
-
-.home-left-side,
-.home-right-side {
-    /* min-width: 400px;*/
 }
 
 .home-left-side {
@@ -1043,6 +1039,9 @@ body:has(#burger:checked) .side-menubar {
 .assignment-details {
     display: none;
     position: absolute;
+    justify-content: center;
+    align-items: center;
+
     background-color: var(--bg-card);
     padding: 2px;
     height: 100%;
@@ -1055,6 +1054,8 @@ body:has(#burger:checked) .side-menubar {
 
 .assignment-description {
 
+
+    text-align: center;
     font-size: clamp(10px, 5cqi, 14px); 
     color: var(--text-muted);
     line-height: 1.4;
@@ -1063,7 +1064,7 @@ body:has(#burger:checked) .side-menubar {
 }
 
 .assignment-technologies {
-
+        text-align: center;
     font-size: clamp(12px, 5cqi, 14px); 
     color: var(--text-main);
     line-height: 1.4;
@@ -1072,12 +1073,26 @@ body:has(#burger:checked) .side-menubar {
     overflow: hidden;
 }
 
+.assignment-details a {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.assignment-details a:hover {
+    text-decoration: underline;
+    color: royalblue;
+}
+
 .assignment-card:hover {
     border-color: var(--primary);
     background-color: rgba(242, 116, 5, 0.05);
 }
 .assignment-card:hover .assignment-details {
-    display: block;
+    display: flex;
+    flex-direction: column;
     opacity: 1;
 }
 
