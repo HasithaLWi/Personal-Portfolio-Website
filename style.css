@@ -913,7 +913,14 @@ body:has(#burger:checked) .side-menubar {
     flex: 1;
     min-width: 250px;
     max-width: 320px;
+
+    /* transition */
+    opacity: 0;
+    transform: translateY(10%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
+
+
 
 .project-card img {
     width: 100%;
@@ -974,6 +981,13 @@ body:has(#burger:checked) .side-menubar {
     font-size: 13px;
     font-weight: 500;
     color: #e0e0e0;
+}
+
+/* ===========================my-resume-section-javaScript=================== */
+
+.project-card.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 /* ==========================================================================
@@ -1057,6 +1071,11 @@ body:has(#burger:checked) .side-menubar {
 /* Contact Form */
 .contact-main-grid .left-side {
     max-width: 650px;
+
+    /* transition */
+    opacity: 0;
+    transform: translateX(-10%);
+
 }
 
 .header-label {
@@ -1158,6 +1177,10 @@ body:has(#burger:checked) .side-menubar {
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    /* transition */
+    opacity: 0;
+    transform: translateX(10%);
 }
 
 .contact-box-01,
@@ -1209,6 +1232,22 @@ body:has(#burger:checked) .side-menubar {
     line-height: 1.5;
     overflow-wrap: anywhere;
 }
+
+/* contact transition */
+.contact .left-side,
+.contact .right-side {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* ===========================contact-section-javaScript======================== */
+.contact.is-visible .contact-main-grid .left-side,
+.contact.is-visible .contact-main-grid .right-side {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================================================= */
+
 
 /* Footer */
 .footer {
@@ -2014,6 +2053,10 @@ body:has(#burger:checked) .side-menubar {
 
     .resume-box .ijse-logo {
         width: 96px;
+    }
+
+    .project-card {
+        transform: translateX(-10%);
     }
 
 
