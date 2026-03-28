@@ -338,7 +338,6 @@ body:has(#burger:checked) .side-menubar {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: clamp(20px, 4vw, 50px); */
     min-height: 100vh;
     padding-block: clamp(36px, 7vh, 80px);
     width: 100%;
@@ -1891,7 +1890,7 @@ body:has(#burger:checked) .side-menubar {
     }
 
     .home {
-        min-height: calc(100vh - 51px);
+        /* min-height: calc(100vh - 51px); */
         padding-top: 50px;
 
     }
@@ -2073,7 +2072,7 @@ body:has(#burger:checked) .side-menubar {
     }
 
     .home {
-        min-height: calc(100vh - 51px);
+        /* min-height: calc(100vh - 51px); */
         padding-top: 40px;
 
     }
