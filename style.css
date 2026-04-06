@@ -515,9 +515,7 @@ body:has(#burger:checked) .side-menubar {
     stroke: #ff6600;
     stroke-width: 16px;
     stroke-linecap: round;
-    transform-origin: 125px 125px;
-
-    animation: aboutRingFill 1s ease-out;
+    transform-origin: 125px 125px; 
 }
 
 
@@ -533,13 +531,13 @@ body:has(#burger:checked) .side-menubar {
 
 .about-ring-track2 {
     stroke-dasharray: 200 690.8;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg); 
     opacity: 0;
 }
 
 .about-ring-dot {
     fill: #ff6600;
-    transform-origin: 125px 125px;
+    transform-origin: 125px 125px; 
     transform: rotate(-90deg);
     opacity: 0;
 }
@@ -745,11 +743,7 @@ body:has(#burger:checked) .side-menubar {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .skills-track {
-        animation: none;
-    }
-}
+
 
 /* about transition */
 .about .left-side,
